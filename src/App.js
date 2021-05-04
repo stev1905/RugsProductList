@@ -48,8 +48,12 @@ class App extends Component {
     this.setState({cartItems: [...cartItems, {...cartItemToAdd, quantity: 1}]}) 
   }
 
-  clearItemFromCart = (cartItem) => {
-    console.log(cartItem)
+  clearItemFromCart = (removedItem) => {
+    console.log(removedItem)
+    const removeCartItem = this.state.cartItems.filter(
+      cartItem => cartItem.productKey !== removedItem.productKey
+      )
+      this.setState({cartItems: removeCartItem})
   }
 
   togglePanel = () => {
@@ -58,7 +62,6 @@ class App extends Component {
 
   render() {
     const {productData, cartItems, isPanelOpen} = this.state;
-    console.log(this.state.cartItems)
     return cartItems.length < 1 ?
       (<div>
         <Header togglePanel={this.togglePanel}/>
