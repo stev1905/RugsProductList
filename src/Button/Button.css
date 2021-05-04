@@ -1,0 +1,44 @@
+.btn {
+    width: 230px;
+    height: 40px;
+    background-color: #252424;
+    color: #fff;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    user-select: none;
+    transition: .25s;
+    position: relative;
+}
+
+.btn i {
+    font-size: 14px;
+    position: absolute;
+    top: 48.5%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    transition: .25s;
+}
+
+.btn span {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    transition: .25s;
+    font-family: Arial, sans-serif;
+    clip-path: circle(200px at 125px 27.5px);
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.btn:hover i {
+    left: 50%;
+}
+
+.btn:hover span {
+    clip-path: circle(0px at 125px 27.5px);
+}

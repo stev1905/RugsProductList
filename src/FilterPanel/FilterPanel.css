@@ -1,0 +1,60 @@
+span {
+    margin-left: 10px;
+}
+
+.filter {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filter-card-container {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 10px;
+}
+
+.filter-btn {
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 330px;
+    height: 40px;
+    background-color: #252424;
+    color: #fff;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    user-select: none;
+    transition: .25s;
+    position: relative;
+}
+
+.filter-title {
+    font-size: 18px;
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+
+.close-toggle {
+    height: 25px;
+    width: 25px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.filter-btn:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.close-toggle:hover {
+    cursor: pointer;
+}
