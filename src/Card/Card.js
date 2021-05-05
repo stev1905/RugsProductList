@@ -10,7 +10,7 @@ const Card = (props) => (
             <p>${props.productItem.productPrice.toFixed(2)}</p>
             <p>{props.productItem.productColor}</p>
         </div>
-        <Button addProductItem={props.addProductItem} cartItems={props.cartItems} item={props.productItem} />
+        <Button addItemToCart={props.addItemToCart} cartItems={props.cartItems} item={props.productItem} />
     </div>
 )
 

@@ -40,7 +40,7 @@ class App extends Component {
     }
   }
 
-  addProductItem = (cartItems, cartItemToAdd) => {
+  addItemToCart = (cartItems, cartItemToAdd) => {
     const getNewData = (() => {
       const existingCartItem = cartItems.find(
         cartItem => cartItem.id === cartItemToAdd.id
@@ -88,6 +88,10 @@ class App extends Component {
     this.setState({productData: filteredProducts})
   }
 
+  resetFilter = () => {
+    this.setState({productData: newProductData, checked: []})
+  }
+
   handleToggle = (value, category, filter) => {
     const currentIndex = this.state.checked.indexOf(value);
     const newChecked = [...this.state.checked];
@@ -107,13 +111,17 @@ class App extends Component {
 
   render() {
     const {productData, cartItems, isPanelOpen, checked, filters} = this.state;
+    const {togglePanel, addItemToCart, handleFilters, handleToggle, resetFilter} = this;
     return cartItems.length < 1 ?
       (<div>
-        <Header togglePanel={this.togglePanel}/>
+        <Header 
+          togglePanel={togglePanel}
+          resetFilter={resetFilter}
+        />
         <CardList 
           productData={productData}
           cartItems={cartItems} 
-          addProductItem={this.addProductItem}
+          addItemToCart={addItemToCart}
         />
         <SlidingPanel
           type={'right'}
@@ -121,20 +129,23 @@ class App extends Component {
           size={25}
         >
         <FilterPanel 
-          togglePanel={this.togglePanel}
-          handleToggle={this.handleToggle}
+          togglePanel={togglePanel}
+          handleToggle={handleToggle}
           checked={checked}
-          handleFilters={this.handleFilters}
+          handleFilters={handleFilters}
           filters={filters}
         />
         </SlidingPanel>
       </div>) : 
       (<div>
-        <Header togglePanel={this.togglePanel}/>
+        <Header 
+          togglePanel={togglePanel}
+          resetFilter={resetFilter}
+        />
         <CardList 
           productData={productData}
           cartItems={cartItems} 
-          addProductItem={this.addProductItem}
+          addItemToCart={addItemToCart}
         />
         <SlidingPanel
           type={'right'}
@@ -142,10 +153,10 @@ class App extends Component {
           size={25}
         >
         <FilterPanel 
-          togglePanel={this.togglePanel}
-          handleToggle={this.handleToggle}
+          togglePanel={togglePanel}
+          handleToggle={handleToggle}
           checked={checked}
-          handleFilters={this.handleFilters}
+          handleFilters={handleFilters}
           filters={filters}
         />
         </SlidingPanel>
