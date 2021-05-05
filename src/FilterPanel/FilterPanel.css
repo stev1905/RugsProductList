@@ -10,37 +10,28 @@ span {
 }
 
 .filter-card-container {
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 175px;
     background-color: #fff;
     border-radius: 5px;
-    padding: 25px;
-    margin: 10px;
+    padding: 15px;
+    margin: 20px;
+    box-shadow: 0 0 8px -4px rgb(0 0 0 / 50%);
 }
 
-.filter-btn {
-    margin-top: 10px;
-    margin-left: 15px;
-    width: 330px;
-    height: 40px;
-    background-color: #252424;
-    color: #fff;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
+.filter-card-content {
+    height: 175px;
+    width: 300px;
     display: flex;
-    user-select: none;
-    transition: .25s;
-    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .filter-title {
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     text-decoration-line: underline;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .close-toggle {
@@ -58,3 +49,29 @@ span {
 .close-toggle:hover {
     cursor: pointer;
 }
+
+.MuiTypography-body1 {
+    font-size: .8rem !important;
+    line-height: 1 !important;
+}
+
+.MuiFormControlLabel-root {
+    width: 150px !important;
+}
+
+@media screen and (max-width: 700px) {
+    .filter {
+        font-size: 12px ;
+    }
+    .filter-card-content 
+    .filter-card-container{
+        height: 100px;
+        width: auto;
+    }
+    .glass {
+        width: 25vw !important;
+    }
+    .panel {
+        width: 75vw !important;
+    }
+ }

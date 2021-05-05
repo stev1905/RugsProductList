@@ -7,7 +7,7 @@ const CardList = (props) => {
         <div className='card-list'>
             {props.productData.map(productItems => (
                 productItems.map(productItem => (
-                    <Card id={props.productKey} productItem={productItem} cartItems={props.cartItems} addProductItem={props.addProductItem} />
+                    <Card id={props.id} productItem={productItem} cartItems={props.cartItems} addProductItem={props.addProductItem} />
             ))))}
         </div>
     )

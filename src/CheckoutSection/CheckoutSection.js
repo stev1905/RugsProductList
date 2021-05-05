@@ -4,7 +4,6 @@ import './CheckoutSection.css';
 
 const CheckoutSection = (props) => (
     <div className='checkout-page'>
-       {console.log(props)}
         <div className='checkout-header'>
             <div className='header-block'>
                <span>Product</span> 
@@ -22,7 +21,7 @@ const CheckoutSection = (props) => (
                <span>Remove</span> 
             </div>
         </div>
-        {props.cartItems.map(cartItem => (<CheckoutItem key={cartItem.productKey} cartItem={cartItem} clearItemFromCart={props.clearItemFromCart}/>
+        {props.cartItems.map(cartItem => (<CheckoutItem key={cartItem.id} cartItem={cartItem} clearItemFromCart={props.clearItemFromCart}/>
         ))}
     </div>
 )

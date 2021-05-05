@@ -22,3 +22,15 @@ img {
     display: flex;
     justify-content: space-between;
 }
+
+
+@media screen and (max-width: 800px) {
+     img {
+         height: 100px;
+         width: 25px;
+     }
+
+     .card-container {
+         height: 175px;
+     }
+  }
